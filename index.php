@@ -17,21 +17,23 @@
             <h1>To do list</h1>
             <section>
                 <ul>
-                    <li>
-
+                    <li v-for="task in toDoTasks" :key="task">
+                        {{ task }}
                     </li>
                 </ul>
             </section>
-            <form action="" method="GET">
+            <form @submit="handleSubmit">
                 <label for="newTask">
                     Inserisci una nuova task
                 </label>
-                <input type="text" id="newTask" v-model="toDoTask">
+                <input type="text" id="newTask" v-model="newTask">
                 <button type="submit">
                     Aggiungi task
                 </button>
             </form>
         </div>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./js/script.js"></script>
 
     </body>
